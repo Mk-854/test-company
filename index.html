@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>株式会社〇〇</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background: #fff;
+      color: #002f3c;
+      padding: 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #002f3c;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+    }
+    nav {
+      display: flex;
+      gap: 1.5em;
+    }
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: green;
+      margin: 4px 0;
+    }
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #f0f0f0;
+      padding: 1em;
+    }
+    .mobile-nav a {
+      padding: 0.5em 0;
+      text-decoration: none;
+      color: #005BAC;
+      font-weight: bold;
+    }
+    .main-visual {
+      background: url('image/main-visual-pc.png') center/cover;
+      height: 700px;
+    }
+    @media (max-width: 768px) {
+      .main-visual {
+        height: 400px;
+      }
+    }
+    section {
+      padding: 2em 1em;
+      max-width: 900px;
+      margin: auto;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 2em 1em;
+      font-size: 0.9em;
+    }
+    .section-title {
+      border-left: 5px solid #005BAC;
+      padding-left: 1em;
+      margin-bottom: 1em;
+      font-size: 1.5em;
+    }
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .mobile-nav.show {
+        display: flex;
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    input, textarea {
+      padding: 0.5em;
+      font-size: 1em;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    button[type="submit"] {
+      padding: 0.7em;
+      font-size: 1em;
+      background-color: #005BAC;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background-color: #003d7a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">株式会社〇〇</div>
+    <div class="nav-container">
+      <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <nav>
+        <a href="#top">TOP</a>
+        <span>/</span>
+        <a href="#about">弊社について</a>
+        <span>/</span>
+        <a href="#service">サービス紹介</a>
+        <span>/</span>
+        <a href="#company">会社概要</a>
+        <span>/</span>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="mobileMenu" class="mobile-nav">
+    <a href="#top" onclick="toggleMenu()">TOP</a>
+    <a href="#about" onclick="toggleMenu()">弊社について</a>
+    <a href="#service" onclick="toggleMenu()">サービス紹介</a>
+    <a href="#company" onclick="toggleMenu()">会社概要</a>
+    <a href="#contact" onclick="toggleMenu()">お問い合わせ</a>
+  </div>
+
+  <div class="main-visual" id="top"></div>
+
+  <section id="about">
+    <h2 class="section-title">弊社について</h2>
+    <p>弊社は、お客様と地域社会に貢献するための信頼あるサービスを提供しています。</p>
+  </section>
+
+  <section id="service">
+    <h2 class="section-title">サービス紹介</h2>
+    <ul>
+      <li>古物商業務</li>
+      <li>インターネットオークション出品代行</li>
+      <li>通信販売業</li>
+      <li>各種物品の企画・製造・販売および輸出入</li>
+      <li>デジタルコンテンツの企画・開発・運営</li>
+      <li>広告業および広告代理業</li>
+    </ul>
+  </section>
+
+  <section id="company">
+    <h2 class="section-title">会社概要</h2>
+    <p>社名：株式会社〇〇<br>
+       所在地：〒000-0000 東京都〇〇区〇〇〇〇<br>
+       設立：202X年X月X日<br>
+       電話番号：000-0000-0000</p>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">お問い合わせ</h2>
+    <form action="https://formsubmit.co/dqdmp0711@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="お名前" required>
+      <input type="email" name="email" placeholder="メールアドレス" required>
+      <textarea name="message" rows="6" placeholder="お問い合わせ内容" required></textarea>
+      <button type="submit">送信</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 株式会社〇〇 All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
